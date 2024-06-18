@@ -102,7 +102,9 @@ class TestBooksCollector:
     def test_add_book_in_favorites_existing_book_false(self): # Добавление в список фаворитов уже существующую книгу
         collector9 = BooksCollector()
         collector9.favorites = ['Солярис', 'Армагеддон', 'Микки Маус', 'Мегрэ', '12 стульев']
-        assert not collector9.add_book_in_favorites('Солярис' )
+        collector9.add_book_in_favorites('Солярис' )
+        assert collector9.favorites == ['Солярис', 'Армагеддон', 'Микки Маус', 'Мегрэ', '12 стульев']
+        #Исправленная проверка метода add_book_in_favorites()
 
     def test_delete_book_from_favorites_one_book(self): # Проверка удаления книги из списка фаворитов
         collector10 = BooksCollector()
